@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
         var vertical = rb.linearVelocityY;
 
         if (Input.GetButtonDown("Fire1"))
-            _jumpEndTime = Time.time + 1;
+            _jumpEndTime = Time.time + 0.5f;
+
         if (Input.GetButton("Fire1") && _jumpEndTime > Time.time)
             vertical = 5;
         rb.linearVelocity = new Vector2(horizontal, vertical);
