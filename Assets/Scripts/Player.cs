@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private float _jumpEndTime;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour
         var vertical = rb.linearVelocityY;
 
         if (Input.GetButtonDown("Fire1"))
+            _jumpEndTime = Time.time + 1;
+        if (Input.GetButton("Fire1") && _jumpEndTime > Time.time)
             vertical = 5;
         rb.linearVelocity = new Vector2(horizontal, vertical);
     }
