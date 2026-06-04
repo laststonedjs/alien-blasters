@@ -6,10 +6,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float _jumpVelocity = 5;
     [SerializeField] private float _jumpDuration = 0.5f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnDrawGizmos()
     {
-        
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        float bottomY = spriteRenderer.bounds.extents.y;
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - bottomY);
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(origin, origin + Vector2.down * 0.1f);
     }
 
     // Update is called once per frame
