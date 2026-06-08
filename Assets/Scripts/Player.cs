@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] float _jumpVelocity = 5;
     [SerializeField] float _jumpDuration = 0.5f;
     [SerializeField] Sprite _jumpSprite;
-    public bool isGrounded;
+    public bool IsGrounded;
     SpriteRenderer _spriteRenderer;
     Sprite _defaultSprite;
     private float _horizontal;
@@ -33,20 +33,16 @@ public class Player : MonoBehaviour
         Vector2 origin = new Vector2(transform.position.x, transform.position.y - _spriteRenderer.bounds.extents.y);
         var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f);
         if (hit.collider)
-        {
-            isGrounded = true;
-        }
+            IsGrounded = true;
         else
-        {
-            isGrounded = false;
-        }
+            IsGrounded = false;
 
         _horizontal = Input.GetAxis("Horizontal");
         Debug.Log(_horizontal);
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         var vertical = rb.linearVelocityY;
 
-        if (Input.GetButtonDown("Fire1") && isGrounded)
+        if (Input.GetButtonDown("Fire1") && IsGrounded)
             _jumpEndTime = Time.time + _jumpDuration;
 
         if (Input.GetButton("Fire1") && _jumpEndTime > Time.time)
@@ -59,10 +55,8 @@ public class Player : MonoBehaviour
 
     private void UpdateSprite()
     {
-        if (isGrounded)
-            _spriteRenderer.sprite = _defaultSprite;
-        else
-            _spriteRenderer.sprite = _jumpSprite;
+        GetComponent<Animator>().SetBool("IsGrounded", IsGrounded);
+        GetComponent<Animator>().SetFloat("HorizontalSpeed", Math.Abs(_horizontal));
 
         if (_horizontal > 0) 
             _spriteRenderer.flipX = false;
