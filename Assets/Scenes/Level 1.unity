@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 367118828}
   - component: {fileID: 367118829}
   - component: {fileID: 367118830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,6 +369,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 55
+  _footOffset: 0.35
   IsGrounded: 0
 --- !u!95 &367118829
 Animator:
