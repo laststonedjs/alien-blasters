@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 261283218}
   - component: {fileID: 261283217}
   - component: {fileID: 261283216}
+  - component: {fileID: 261283219}
   m_Layer: 0
   m_Name: spring
   m_TagString: Untagged
@@ -257,6 +258,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261283219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261283215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec654c2145937174285d7fde339f6eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  _sprung: {fileID: -4775003707865581455, guid: aa0fb65b9838bd44caeef719f3936def, type: 3}
 --- !u!1 &367118823
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +289,7 @@ GameObject:
   - component: {fileID: 367118831}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -935,7 +949,7 @@ Transform:
   m_GameObject: {fileID: 520486453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.44, y: 0.4, z: 0}
+  m_LocalPosition: {x: 3.6, y: 1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
